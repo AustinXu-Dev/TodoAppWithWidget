@@ -12,7 +12,7 @@ struct CompletedTasksView: View {
     
     @Environment(\.modelContext) private var context
     
-    @Query(filter: #Predicate<Task> { $0.isCompleted }, sort: [SortDescriptor (\Task.lastUpdated, order: .reverse)], animation: .snappy) var completedTasks: [Task]
+    @Query(filter: #Predicate<TodoTask> { $0.isCompleted }, sort: [SortDescriptor (\TodoTask.lastUpdated, order: .reverse)], animation: .snappy) var completedTasks: [TodoTask]
     
     var body: some View {
         Section("Completed"){

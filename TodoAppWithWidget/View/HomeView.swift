@@ -13,7 +13,7 @@ struct HomeView: View {
     
     @Environment(\.modelContext) private var modelContext
     
-    @Query(filter: #Predicate<Task> { !$0.isCompleted }, sort: [SortDescriptor (\Task.lastUpdated, order: .reverse)], animation: .snappy) var tasks: [Task]
+    @Query(filter: #Predicate<TodoTask> { !$0.isCompleted }, sort: [SortDescriptor (\TodoTask.lastUpdated, order: .reverse)], animation: .snappy) var tasks: [TodoTask]
    
     
     @State private var showAddTaskPrompt = false
@@ -57,7 +57,7 @@ struct HomeView: View {
             // Handle invalid input (e.g., show an error message)
             return
         }
-        let newTask = Task(name: newTaskName)
+        let newTask = TodoTask(name: newTaskName)
         modelContext.insert(newTask)
         WidgetCenter.shared.reloadAllTimelines()
         newTaskName = ""

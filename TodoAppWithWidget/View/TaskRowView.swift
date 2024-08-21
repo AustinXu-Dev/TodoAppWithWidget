@@ -10,7 +10,7 @@ import WidgetKit
 
 struct TaskRowView: View {
     
-    @Bindable var task: Task
+    @Bindable var task: TodoTask
     
     @Environment(\.modelContext) private var context
     @Environment(\.scenePhase) private var scenePhase

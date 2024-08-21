@@ -11,7 +11,7 @@
 		BC5F03762C465850007933BC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5F03752C465850007933BC /* ContentView.swift */; };
 		BC5F03782C465852007933BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC5F03772C465852007933BC /* Assets.xcassets */; };
 		BC5F037B2C465852007933BC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC5F037A2C465852007933BC /* Preview Assets.xcassets */; };
-		BC5F03842C46587E007933BC /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5F03832C46587E007933BC /* Task.swift */; };
+		BC5F03842C46587E007933BC /* TodoTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5F03832C46587E007933BC /* TodoTask.swift */; };
 		BC5F03862C465890007933BC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5F03852C465890007933BC /* HomeView.swift */; };
 		BC5F03882C4658A2007933BC /* AddTaskPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5F03872C4658A2007933BC /* AddTaskPrompt.swift */; };
 		BC5F038A2C4658B5007933BC /* TaskRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5F03892C4658B5007933BC /* TaskRowView.swift */; };
@@ -22,7 +22,7 @@
 		BC5F039D2C46591A007933BC /* TodoWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5F039C2C46591A007933BC /* TodoWidget.swift */; };
 		BC5F039F2C46591D007933BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC5F039E2C46591D007933BC /* Assets.xcassets */; };
 		BC5F03A32C46591D007933BC /* TodoWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = BC5F03932C46591A007933BC /* TodoWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		BC5F03A82C465A15007933BC /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5F03832C46587E007933BC /* Task.swift */; };
+		BC5F03A82C465A15007933BC /* TodoTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5F03832C46587E007933BC /* TodoTask.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +55,7 @@
 		BC5F03752C465850007933BC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BC5F03772C465852007933BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC5F037A2C465852007933BC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		BC5F03832C46587E007933BC /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		BC5F03832C46587E007933BC /* TodoTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTask.swift; sourceTree = "<group>"; };
 		BC5F03852C465890007933BC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		BC5F03872C4658A2007933BC /* AddTaskPrompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskPrompt.swift; sourceTree = "<group>"; };
 		BC5F03892C4658B5007933BC /* TaskRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRowView.swift; sourceTree = "<group>"; };
@@ -143,7 +143,7 @@
 		BC5F03822C46586E007933BC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				BC5F03832C46587E007933BC /* Task.swift */,
+				BC5F03832C46587E007933BC /* TodoTask.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -273,7 +273,7 @@
 				BC5F03762C465850007933BC /* ContentView.swift in Sources */,
 				BC5F03862C465890007933BC /* HomeView.swift in Sources */,
 				BC5F038E2C4658D0007933BC /* CompletedTasksView.swift in Sources */,
-				BC5F03842C46587E007933BC /* Task.swift in Sources */,
+				BC5F03842C46587E007933BC /* TodoTask.swift in Sources */,
 				BC5F038A2C4658B5007933BC /* TaskRowView.swift in Sources */,
 				BC5F03742C465850007933BC /* TodoAppWithWidgetApp.swift in Sources */,
 			);
@@ -284,7 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC5F039B2C46591A007933BC /* TodoWidgetBundle.swift in Sources */,
-				BC5F03A82C465A15007933BC /* Task.swift in Sources */,
+				BC5F03A82C465A15007933BC /* TodoTask.swift in Sources */,
 				BC5F039D2C46591A007933BC /* TodoWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,6 +432,7 @@
 				DEVELOPMENT_TEAM = A89P8LLWX2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "Allow app to use your calendar.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -444,9 +445,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.austinxu.AustinTodoAppWithWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -463,6 +468,7 @@
 				DEVELOPMENT_TEAM = A89P8LLWX2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "Allow app to use your calendar.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -475,9 +481,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.austinxu.AustinTodoAppWithWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -8,7 +8,7 @@
 import Foundation
 import SwiftData
 
-@Model class Task: Identifiable {
+@Model class TodoTask: Identifiable {
     private(set) var id: String = UUID().uuidString
     var name: String
     var isCompleted: Bool = false

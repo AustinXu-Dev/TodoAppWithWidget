@@ -1,0 +1,116 @@
+# Xcode specific
+DerivedData/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+*.xccheckout
+*.xcscmblueprint
+
+# Project and workspace files
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcodeproj/xcshareddata/**/*
+*.xcworkspace/*
+!*.xcworkspace/contents.xcworkspacedata
+!*.xcworkspace/xcshareddata/
+!*.xcworkspace/xcshareddata/**/*
+!*.xcworkspace/xcuserdata/
+
+# Swift Package Manager
+Packages/
+.build/
+.swiftpm/xcode/package.pins
+.swiftpm/xcode/configuration/
+
+# CocoaPods
+Pods/
+Podfile.lock
+
+# Carthage
+Carthage/Build/
+Carthage/Checkouts/
+
+# Fastlane
+fastlane/
+Fastfile
+Appfile
+Deliverfile
+Snapfile
+Screengrabfile
+Matchfile
+Gymfile
+Scanfile
+Certfile
+Pemfile
+Sighfile
+Producefile
+Pluginfile
+Fastfile.swift
+fastlane/README.md
+fastlane/report.xml
+fastlane/logs/
+fastlane/screenshots/
+fastlane/test_output/
+fastlane/report.html
+fastlane/metadata/
+fastlane/Preview.html
+fastlane/env.yml
+fastlane/beta_pdf.yml
+fastlane/docs.yml
+fastlane/AppIcon.jpg
+fastlane/AppIcon.png
+fastlane/report.json
+fastlane/tmp/
+fastlane/lanes/
+fastlane/actions/
+fastlane/.env
+fastlane/.fastlane
+fastlane/.fastlane_env
+fastlane/.fastlane_session
+
+# Certificates and provisioning profiles
+*.cer
+*.mobileprovision
+*.p12
+
+# Exclude specific files mentioned
+F38AQQ59DH.cer
+Gemfile
+Gemfile.lock
+ReleaseApp.app.dSYM.zip
+ReleaseApp.ipa
+
+# Ignore Xcode build artifacts
+build/
+*.app
+*.dSYM.zip
+*.ipa
+*.xcarchive
+
+# Ignore temporary files
+*.tmp
+*.swp
+*~
+
+# Ignore environment settings
+.env
+.env.*
+
+# macOS specific
+.DS_Store
+*.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Thumbnails
+._*
+

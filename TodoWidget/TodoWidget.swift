@@ -38,7 +38,7 @@ struct SimpleEntry: TimelineEntry {
 struct TodoWidgetEntryView : View {
     var entry: Provider.Entry
 
-    @Query(taskDescriptor, animation: .snappy) private var tasks: [Task]
+    @Query(taskDescriptor, animation: .snappy) private var tasks: [TodoTask]
     
     var body: some View {
         VStack {
@@ -69,9 +69,9 @@ struct TodoWidgetEntryView : View {
         }
     }
     
-    static var taskDescriptor: FetchDescriptor<Task>{
-        let predicate = #Predicate<Task> { !$0.isCompleted }
-        let sort = [SortDescriptor(\Task.name)]
+    static var taskDescriptor: FetchDescriptor<TodoTask>{
+        let predicate = #Predicate<TodoTask> { !$0.isCompleted }
+        let sort = [SortDescriptor(\TodoTask.name)]
         
         var descriptor = FetchDescriptor(predicate: predicate, sortBy: sort)
         descriptor.fetchLimit = 3
@@ -86,7 +86,7 @@ struct TodoWidget: Widget {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             TodoWidgetEntryView(entry: entry)
                 .containerBackground(.fill.tertiary, for: .widget)
-                .modelContainer(for: Task.self)
+                .modelContainer(for: TodoTask.self)
             
         }
         .configurationDisplayName("My Widget")
@@ -113,9 +113,9 @@ struct ToggleButton: AppIntent{
     
     func perform() async throws -> some IntentResult {
         // Update task status, Get context
-        let context = try ModelContext(.init(for: Task.self))
+        let context = try ModelContext(.init(for: TodoTask.self))
         // Retrieve the respective task ID
-        let descriptor = FetchDescriptor(predicate: #Predicate<Task> { $0.id == id})
+        let descriptor = FetchDescriptor(predicate: #Predicate<TodoTask> { $0.id == id})
         if let task = try context.fetch(descriptor).first{
             task.isCompleted = true
             task.lastUpdated = .now
